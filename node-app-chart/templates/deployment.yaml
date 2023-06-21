@@ -1,0 +1,71 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mongodb-deployment
+  labels:
+    app: mongodb
+spec:
+  replicas: {{ .Values.mongodb-deployment.replicas }}
+  selector:
+    matchLabels:
+      app: mongodb
+  template:
+    metadata:
+      labels:
+        app: mongodb
+    spec:
+      containers:
+        - name: mongodb
+          image: {{ .Values.mongodb-deployment.image }}
+          ports:
+            - containerPort: {{ .Values.mongodb-deployment.containerPort }}
+
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nodebackend-deployment
+  labels:
+    app: nodebackend
+spec:
+  replicas: {{ .Values.nodebackend-deployment.replicas }}
+  selector:
+    matchLabels:
+      app: nodebackend
+  template:
+    metadata:
+      labels:
+        app: nodebackend
+    spec:
+      containers:
+        - name: nodebackend
+          image: {{ .Values.nodebackend-deployment.image }}
+          ports:
+            - containerPort: {{ .Values.nodebackend-deployment.containerPort }}
+
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: reactwebapp-deployment
+  labels:
+    app: reactwebapp
+spec:
+  replicas: {{ .Values.reactwebapp-deployment.replicas }}
+  selector:
+    matchLabels:
+      app: reactwebapp
+  template:
+    metadata:
+      labels:
+        app: reactwebapp
+    spec:
+      containers:
+        - name: reactwebapp
+          image: {{ .Values.reactwebapp-deployment.image }}
+          ports:
+            - containerPort: {{ .Values.reactwebapp-deployment.containerPort }}
+
+
