@@ -1,0 +1,38 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: myingress
+spec:
+  rules:
+  - host: "mainreact.com"
+    http:
+      paths:
+      - pathType: Prefix
+        path: "/"
+        backend:
+          service:
+            name: reactwebapp-service
+            port:
+              number: 9000
+  - host: "api.backend.com"
+    http:
+      paths:
+      - pathType: Prefix
+        path: "/"
+        backend:
+          service:
+            name: nodebackend-service
+            port:
+              number: 8000
+  - host: "mongo.backend.com"
+    http:
+      paths:
+      - pathType: Prefix
+        path: "/"
+        backend:
+          service:
+            name: mongodb-service
+            port:
+              number: 27017
+
+

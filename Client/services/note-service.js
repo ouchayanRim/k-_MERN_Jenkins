@@ -10,7 +10,7 @@ import * as axios from 'axios';
 // db options
 
 
-const baseApiUrl = 'http://localhost:8000/api';
+const baseApiUrl = 'http://nodebackend-service:30606/api';
 
 
 // add note
