@@ -95,7 +95,9 @@ pipeline {
                         
                     sh "docker pull ${ecrRepositoryUrl}/node-app-chart:0.1.0"
                     
-                    sh "helm install node-app-chart node-app-chart-0.1.0.tgz "
+                   sh "helm install node-app-chart ./node-app-chart-0.1.0.tgz "
+
+                     
                     
                     
                   }
