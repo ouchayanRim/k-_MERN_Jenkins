@@ -2,7 +2,7 @@ pipeline {
     agent any
     environment {
         build_number = "${env.BUILD_ID}"
-        AWS_ACCOUNT_ID="071892199962"
+        AWS_ACCOUNT_ID=""
         AWS_DEFAULT_REGION="us-east-1"
         IMAGE_REPO_NAME="jenkins_node_ecr"
         IMAGE_TAG="latest"
