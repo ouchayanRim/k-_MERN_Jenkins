@@ -1,0 +1,22 @@
+---
+version: "3"
+services:
+  node:
+    build:
+      context: .
+      dockerfile: Dockerfile.node
+    ports:
+      - 8000:8000
+    networks:
+      - app-network
+  react:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 9000:9000
+    networks:
+      - app-network
+networks:
+  app-network:
+    driver: bridgew
