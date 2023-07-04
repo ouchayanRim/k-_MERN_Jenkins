@@ -87,6 +87,13 @@ kubectl port-forward reactwebapp-deployment-86f8b6d765-wckhp  9000:9000
 
 kubectl port-forward nodebackend-deployment-7759cc886d-mjgx8  8000:8000
 
+and also i have done svc clusterip to nodeport by kubectl patch command 
+
+eg:
+in react  kubectl patch svc reactwebapp-service  -p '{"spec": {"type": "NodePort"}}'
+
+same like mongo and node .. and node port is for accessing port inside an organization
+
 then we can access our application through our browser 
 
 and also i had done ingress also in minikube cluster 
