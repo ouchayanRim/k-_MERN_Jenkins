@@ -55,7 +55,7 @@ pipeline {
         stage('helmChart tag and  push to ECR') {
             steps {
 
-                  sh "sed -i 's|sreekanthpv12/nodebackend:v5|sreekanthpv12/nodebackend:${build_number}|g' node-app-chart/values.yaml"
+                  sh "sed -i 's|sreekanthpv12/nodebackend:v5|sreekanthpv12/nodebackend:${build_number}|g' ./node-app-chart/values.yaml"
                  }
         }
         
