@@ -1,0 +1,23 @@
+# Base image
+FROM node:8.17.0-alpine
+
+# Set working directory
+WORKDIR /app
+
+
+# Copy the rest of the app code
+COPY . .
+
+# Install dependencies
+RUN npm install
+
+
+# Run the build command
+RUN npm run build
+
+
+# Expose the port
+EXPOSE 8000
+
+# Start the Node.js app
+CMD ["npm", "run","serve:api"] 
