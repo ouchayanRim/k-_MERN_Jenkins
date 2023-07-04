@@ -2,7 +2,7 @@ pipeline {
     agent any
     environment {
         build_number = "${env.BUILD_ID}"
-        AWS_ACCOUNT_ID=""
+        AWS_ACCOUNT_ID="071892199962"
         AWS_DEFAULT_REGION="us-east-1"
         IMAGE_REPO_NAME="jenkins_node_ecr"
         IMAGE_TAG="latest"
@@ -93,9 +93,9 @@ pipeline {
                  withCredentials([aws(credentialsId: 'ecr-credential', accessKeyVariable: 'AWS_ACCESS_KEY_ID', secretKeyVariable: 'AWS_SECRET_ACCESS_KEY')]) {
                         
                         
-                    sh "docker pull ${ecrRepositoryUrl}/node-app-chart:0.1.0"
+                    sh "helm pull ${ecrRepositoryUrl}/node-app-chart --version 0.1.0 --untar"
                     
-                   sh "helm install node-app-chart ./node-app-chart-0.1.0.tgz "
+                   sh "helm install node-app-chart node-app-chart "
 
                      
                     
