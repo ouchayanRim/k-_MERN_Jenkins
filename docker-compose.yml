@@ -19,4 +19,4 @@ services:
       - app-network
 networks:
   app-network:
-    driver: bridgew
+    driver: bridge

@@ -1,11 +1,12 @@
-FROM  node:8.17.0-buster
+# react front 
+FROM  node:8.17.0-alpine
 
 WORKDIR /app
 
 COPY . .
 
 # Install dependencies
-RUN npm install
+RUN npm install -f
 
 
 # Build the React app
