@@ -8,7 +8,7 @@ const cors = require('cors');
 const notesRouter = require('./routers/notes-router');
 
 // initialization
-const PORT = process.env.PORT || 8000;
+const BACKEND_PORT = process.env.BACKEND_PORT || 8000;
 
 // configure server
 
@@ -18,11 +18,11 @@ server.use(bodyParser.urlencoded({ extended: true }));
 server.use(bodyParser.json());
 server.use(cors());
 server.use(morgan('combined'));
-server.use('/api', notesRouter(PORT));
+server.use('/api', notesRouter(BACKEND_PORT));
 
 
 // start server
 
-server.listen(PORT, () => {
-    console.log(`Listening on port ${PORT} ...`);
+server.listen(BACKEND_PORT, () => {
+    console.log(`Listening on BACKEND_PORT ${BACKEND_PORT} ...`);
 });

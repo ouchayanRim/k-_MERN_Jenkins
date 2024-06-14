@@ -8,7 +8,7 @@
     "lint": "eslint .; exit 0",
     "lint:fix": "eslint . --fix",
     "serve": "webpack -d && live-server ./Client/public",
-    "serve:dev": "webpack-dev-server --open",
+    "serve:dev": "webpack-dev-server --host 0.0.0.0",
     "serve:api": "node ./Server/server.js",
     "test": "echo \"No tests available\" && exit 1"
   },
@@ -42,8 +42,9 @@
   },
   "dependencies": {
     "axios": "^0.17.1",
-    "body-parser": "^1.18.2",
+    "body-parser": "^1.20.2",
     "cors": "^2.8.4",
+    "dotenv": "^16.4.5",
     "express": "^4.16.2",
     "moment": "^2.19.3",
     "mongodb": "^2.2.33",

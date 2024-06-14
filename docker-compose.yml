@@ -1,4 +1,3 @@
----
 version: "3"
 services:
   node:
@@ -9,6 +8,7 @@ services:
       - 8000:8000
     networks:
       - app-network
+
   react:
     build:
       context: .
@@ -17,6 +17,16 @@ services:
       - 9000:9000
     networks:
       - app-network
+    depends_on:
+      - node
+
+  mongo:
+    image: mongo:3
+    ports:
+      - 27017:27017
+    networks:
+      - app-network
+
 networks:
   app-network:
     driver: bridge

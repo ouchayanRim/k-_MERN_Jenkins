@@ -6,12 +6,11 @@
 
 import * as axios from 'axios';
 
+require('dotenv').config();
 
 // db options
 
-
-const baseApiUrl = 'http://nodebackend-service:30606/api';
-
+const baseApiUrl = process.env.BACKEND_APP_API_URL && (process.env.BACKEND_APP_API_URL+':'+process.env.BACKEND_PORT+'/api') || 'http://localhost:8000/api';
 
 // add note
 

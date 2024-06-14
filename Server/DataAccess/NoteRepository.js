@@ -1,11 +1,17 @@
 'use strict';
 
+
 const ObjectID = require('mongodb').ObjectID;
 const DbConnection = require('./DbConnection');
+require('dotenv').config();
 
 const collection = 'notes';
 
-const connect = () => new DbConnection('mongodb://mongodb-service:27017/noteworx');
+const MONGO_URL = process.env.MONGO_URL || 'mongodb://localhost:27017/noteworx';
+
+const connect = () => new DbConnection(MONGO_URL);
+
+
 
 const filters = {
     id: (id) => {

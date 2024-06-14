@@ -78,9 +78,9 @@ const notesRouter = () => {
             }
         })
         .post('/notes', (request, response) => {
-            console.log(request.body);
+            console.log(request);
             const { title, content, tags } = request.body;
-
+            console.log(' title: ',title,' content: ', content,' tags: ', tags);
             if (!title) {
                 response.status(400).send('Title is required');
             } else if (!content) {

@@ -30,9 +30,7 @@ if any port is working stop it
 
 i have created docker file for react and by creating the docker image i have used command like
 
- 
-
-  docker build  -t sreekanthpv12/reactwebapp:latest .
+docker build  -t sreekanthpv12/reactwebapp:latest .
    
 and for node   docker build -t sreekanthpv12/nodebackend: .
 
@@ -110,5 +108,21 @@ these are up to my task regarding deploying application in kubernetes in my case
 
 and next i need to provide ci/cd and atlast deploy into my minikube  and these things i have done it on Jenkinsfile in this git hub  root directory 
 
+
+# backend build
+
+docker build -t sreekanthpv12/nodebackend -f Dockerfile.node .
+
+# backend run
+
+docker run -p 8000:8000 sreekanthpv12/nodebackend
+
+
+# frontend build
+
+docker build -t sreekanthpv12/reactwebapp .
+
+# frontend docker run 
+run -d -p 9000:9000 sreekanthpv12/reactwebapp
 
 
