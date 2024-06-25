@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
         - name: nodebackend
-          image: sreekanthpv12/nodebackend:latest
+          image: omarimi/nodebackend:latest
           ports:
             - containerPort: 8000

@@ -7,7 +7,7 @@ require('dotenv').config();
 
 const collection = 'notes';
 
-const MONGO_URL = process.env.MONGO_URL || 'mongodb://localhost:27017/noteworx';
+const MONGO_URL = 'mongodb://mongodb-service.default.svc.cluster.local:27017/noteworx';
 
 const connect = () => new DbConnection(MONGO_URL);
 

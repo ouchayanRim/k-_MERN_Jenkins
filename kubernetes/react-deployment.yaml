@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: reactwebapp
-          image: sreekanthpv12/reactwebapp:v3
+          image: omarimi/reactwebapp:latest
           ports:
             - containerPort: 9000
 

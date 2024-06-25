@@ -10,7 +10,7 @@ require('dotenv').config();
 
 // db options
 
-const baseApiUrl = process.env.BACKEND_APP_API_URL && (process.env.BACKEND_APP_API_URL+':'+process.env.BACKEND_PORT+'/api') || 'http://localhost:8000/api';
+const baseApiUrl = 'http://api.backend.com/api';
 
 // add note
 
