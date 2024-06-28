@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: reactwebapp
-          image: omarimi/reactwebapp:latest
+          image: ouchayanr/reactwebapp:latest
           ports:
             - containerPort: 9000
 
