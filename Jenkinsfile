@@ -10,7 +10,7 @@ pipeline {
 
     }*/
     tools {
-        maven 'maven' jfkj
+        maven 'maven' 
     }
     stages {
         stage ('git repo') {
