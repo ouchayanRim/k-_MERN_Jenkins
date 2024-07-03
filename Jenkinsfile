@@ -1,32 +1,32 @@
 pipeline {
     agent any
-  /*  environment {
+   environment {
         build_number = "${env.BUILD_ID}"
-        AWS_ACCOUNT_ID="071892199962"
+      /*  AWS_ACCOUNT_ID="071892199962"
         AWS_DEFAULT_REGION="us-east-1"
         IMAGE_REPO_NAME="jenkins_node_ecr"
         IMAGE_TAG="latest"
         REPOSITORY_URI = "${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_DEFAULT_REGION}.amazonaws.com/${IMAGE_REPO_NAME}"
-
-    }*/
-    tools {
-        maven 'maven' 
+        */
     }
+    /*tools {
+        maven 'maven' 
+    }*/
     stages {
         stage ('git repo') {
             steps {
-                git branch: 'main', url: 'https://github.com/sreekanthpv12/k8_react_node_mongo-jenkins.git'
+                git branch: 'main', url: 'https://github.com/ouchayanRim/k-_MERN_Jenkins.git'
             }
         }
-    /* stage('Build Docker Image') {
+    stage('Build Docker Image') {
             steps {
                 script {
-                  sh ' docker build -t sreekanthpv12/nodebackend:v5.${build_number} .'
-                  sh ' docker build -t sreekanthpv12/reactwebapp:v3.${build_number} .'
+                  sh ' docker build -t ouchayanr/nodebackend:v5.${build_number} .'
+                  sh ' docker build -t ouchayanr/reactwebapp:v3.${build_number} .'
                   
                 }
             }
-        }
+        } /*
      stage('Deploy Docker Image') {
             steps {
                 script {    
