@@ -26,6 +26,16 @@ spec:
             name: nodebackend-service
             port:
               number: 8000
+  - host: "jenkins.local"
+    http:
+      paths:
+      - pathType: Prefix
+        path: "/"
+        backend:
+          service:
+            name: jenkins
+            port:
+              number: 8080
   # - host: "mongo.backend.com"
   #   http:
   #     paths:

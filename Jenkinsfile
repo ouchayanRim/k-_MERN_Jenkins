@@ -1,6 +1,6 @@
 pipeline {
     agent any
-    environment {
+  /*  environment {
         build_number = "${env.BUILD_ID}"
         AWS_ACCOUNT_ID="071892199962"
         AWS_DEFAULT_REGION="us-east-1"
@@ -8,9 +8,9 @@ pipeline {
         IMAGE_TAG="latest"
         REPOSITORY_URI = "${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_DEFAULT_REGION}.amazonaws.com/${IMAGE_REPO_NAME}"
 
-    }
+    }*/
     tools {
-        maven 'maven'
+        maven 'maven' jfkj
     }
     stages {
         stage ('git repo') {
@@ -18,7 +18,7 @@ pipeline {
                 git branch: 'main', url: 'https://github.com/sreekanthpv12/k8_react_node_mongo-jenkins.git'
             }
         }
-     stage('Build Docker Image') {
+    /* stage('Build Docker Image') {
             steps {
                 script {
                   sh ' docker build -t sreekanthpv12/nodebackend:v5.${build_number} .'
@@ -105,7 +105,7 @@ pipeline {
                   }
                    
                  }
-        }
+        }*/
         
     }
 }
