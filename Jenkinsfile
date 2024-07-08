@@ -15,7 +15,7 @@ pipeline {
     stages {
         stage ('git repo') {
             steps {
-                git branch: 'main', url: 'https://github.com/sreekanthpv12/k8_react_node_mongo-jenkins.git'
+                git branch: 'main', url: 'https://github.com/ouchayanr/k8_react_node_mongo-jenkins.git'
             }
         }
     /* stage('Build Docker Image') {
