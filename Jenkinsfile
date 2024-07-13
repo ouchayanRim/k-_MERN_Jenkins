@@ -29,7 +29,7 @@ pipeline {
                     
                 }
         }
-      /*  stage('Deploy Docker Image') {
+       stage('Deploy Docker Image') {
             steps {
                 script {
                     withDockerRegistry(credentialsId: 'dockerhub') {                  
@@ -46,7 +46,7 @@ pipeline {
                 sh 'docker rmi -f ouchayanr/reactwebapp:v3.${BUILD_ID} '
             }
         }
-        
+        /*
         stage('helmChart tag ') {
             steps {
 
@@ -55,6 +55,7 @@ pipeline {
 
                  }
         }
+        
         //  stage('Helm Install') {
         //     steps {
         //         script {
